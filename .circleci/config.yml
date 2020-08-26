@@ -50,7 +50,7 @@ jobs:
           command: |
             eb init --region us-east-1 --platform iis-10.0 circleci-beanstalk
             #eb create circleci-beanstalk-test
-            eb create --keyname k8s circleci-beanstalk-devopsdev
+            eb deploy circleci-beanstalk-devopsdev
             
 workflows:
   Publish_and_build:
