@@ -15,7 +15,7 @@ jobs:
           command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
       - when:
           condition:
-            equal: [ $CIRCLE_BUILD_NUM, $CIRCLE_BUILD_NUM ]
+            equal: [ BLOCKED, $status ]
           steps:
             - run: echo $CIRCLE_BUILD_NUM
              
