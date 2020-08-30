@@ -1,4 +1,3 @@
-
 IFS=$'\n' read -d '' -r -a lines < values.txt
 status=${lines[0]}
 currentpipe=${lines[1]}
@@ -8,6 +7,7 @@ then
     echo "Its NULL..... Trigger pipe1"
 
         echo "Cancel current pipeline"
+		 exit 1
 
 else
     echo "Has value...! $status: $currentpipe"
@@ -20,6 +20,8 @@ else
             echo "Condition not mactched.Triggering Pipe1"
 
                 echo "Cancel current pipeline"
+				
+				exit 1
     fi
 
 fi
