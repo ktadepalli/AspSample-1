@@ -15,7 +15,7 @@ then
 
 else
     echo "Has value...! $statuss: $currentpipes"
-        if [ $statuss == 'BLOK' ] & [ $currentpipes == 'pip2' ]
+        if [ "$statuss" == "BLOK" ] & [ "$currentpipes" == "pip2" ]
     then
             echo "Executing current Pipeline..."
 
