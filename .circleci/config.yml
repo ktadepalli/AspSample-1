@@ -51,7 +51,7 @@ jobs:
             echo $status
             echo $abc
             echo ${abc}
-            .\conf.ps1 $status PIPE2 << pipeline.number >>  
+            echo $status ${abc} << pipeline.number >>  
       - run:
           name: Cancel build
           working_directory: ~/repo/Package
