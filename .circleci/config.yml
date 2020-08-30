@@ -22,8 +22,8 @@ jobs:
           working_directory: ~/repo/Package
           command: |
             touch ./values.txt
-            echo $status >> ./values.txt
-            echo $currentpipe" >> ./values.txt
+            #echo $status >> ./values.txt
+            #echo $currentpipe" >> ./values.txt
             #cat ~/repo/Package/values.txt
 
   publish:
