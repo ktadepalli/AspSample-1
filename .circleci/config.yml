@@ -12,7 +12,14 @@ jobs:
       - checkout
       - run:
           name: Build Project 
-          command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true          
+          command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true     
+          
+      - run:
+          name: Build Project 
+          command: curl -X POST https://circleci.com/api/v1.1/project/github/ktadepalli/AspSample-1/$CIRCLE_BUILD_NUM/cancel -H "Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2"  
+          
+                      
+
       - persist_to_workspace:
           root: C:/Users/circleci/project/obj/Release
           paths:
