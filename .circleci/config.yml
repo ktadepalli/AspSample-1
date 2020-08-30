@@ -12,7 +12,29 @@ jobs:
       - checkout
       - run:
           name: Build Project 
-          command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true     
+          command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
+          
+          
+- run:
+          name: Build Project 
+          command:  if ($status -eq 'NULL' -and $currentpipe -eq 'NULL')
+                            {
+                             #CANCEL current pipeline
+                                   #TRIGGER Pipe 
+                        }
+                        else
+                  {
+                     if ($status -eq 'BLOCKED' -and $currentpipe -eq 'PIPE2')
+                 {
+                       #TRIGGER Pipe2
+                #UPDATE the status
+      }
+      else
+      {
+        #CANCEL current pipeline
+         #TRIGGER Pipe 1
+      }
+}
       - persist_to_workspace:
           root: C:/Users/circleci/project/obj/Release
           paths:
