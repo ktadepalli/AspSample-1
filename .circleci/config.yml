@@ -15,7 +15,7 @@ jobs:
           command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
       - run:
           name: Build Project 
-          command: .\conf.ps1 NULL NULL 123   
+          command: .\conf.ps1 NULL NULL $CIRCLE_BUILD_NUM   
       - when:
           condition:
             equal: [ BLOCKED, $status ]
@@ -45,7 +45,7 @@ jobs:
           working_directory: ~/repo/Package
           command: |
             echo $CIRCLE_BUILD_NUM
-            curl -X POST https://circleci.com/api/v1.1/project/github/ktadepalli/AspSample-1/$CIRCLE_BUILD_NUM/cancel -H "Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2"  
+            #curl -X POST https://circleci.com/api/v1.1/project/github/ktadepalli/AspSample-1/$CIRCLE_BUILD_NUM/cancel -H "Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2"  
             #curl -X POST https://circleci.com/api/v2/project/github/ktadepalli/AspSample-1/job/$CIRCLE_BUILD_NUM/cancel -H 'Accept: application/json' -H 'Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2'
       - run:
           name: Installing deployment dependencies
