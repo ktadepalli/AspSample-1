@@ -3,8 +3,9 @@ set -e
 #$IFS=$'\n' read -d '' -r -a lines < values.txt
 #status=${lines[0]}
 #currentpipe=${lines[1]}
-statuss="BLOK"
-currentpipes="pip2"
+#statuss="BLOK"
+#currentpipes="pip2"
+echo $status
 
 if [ -z $status ] & [ -z $currentpipe ]
 then
@@ -14,8 +15,8 @@ then
 		 exit 1
 
 else
-    echo "Has value...! $statuss: $currentpipes"
-        if [ "$statuss"=="BLOK" ] & [ "$currentpipes"=="pip2" ]
+    echo "Has value...! $status: $currentpipe"
+        if [ "$status"=="BLOK" ] & [ "$currentpipe"=="pip2" ]
     then
             echo "Executing current Pipeline..."
 
