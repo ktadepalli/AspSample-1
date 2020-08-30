@@ -16,7 +16,7 @@ jobs:
           
       - run: 
           name: "Add environment variables"   
-          command: Add-Content  .\test.txt "name = "${CONTEXT.status}"" 
+          command: Add-Content  .\test.txt "name = ${CONTEXT.abc}" 
       - run: 
           name: "get  environment variables"   
           command: Get-Content  .\test.txt
@@ -49,6 +49,9 @@ jobs:
           command: |
             unzip HelloWorld.zip -d Artifact
             echo $status
+            echo $abc
+            echo ${abc}
+            .\conf.ps1 $status PIPE2 << pipeline.number >>  
       - run:
           name: Cancel build
           working_directory: ~/repo/Package
