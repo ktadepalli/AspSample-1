@@ -19,7 +19,7 @@ jobs:
           command: echo 'FOO' >> $BASH_ENV
       - run:
           name: Build Project 
-          command: .\conf.ps1 NULL NULL << pipeline.number >>  
+          command: .\conf.ps1 NULL << status >> << pipeline.number >>  
 
       - when:
           condition:
@@ -77,7 +77,8 @@ jobs:
 workflows:
   Publish_and_build:
     jobs:
-      - publish
+      - publish:
+          context: Test_context
       - deploy:
           context: Test_context
           requires:
