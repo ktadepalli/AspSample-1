@@ -9,6 +9,7 @@ jobs:
     - image: circleci/python:3.6.4
     description: check pipeline
     steps:    
+      - checkout
       - run:
           name: env Data
           working_directory: ~/repo/Package
