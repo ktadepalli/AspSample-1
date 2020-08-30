@@ -15,7 +15,8 @@ jobs:
           command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
       - run:
           name: Build Project 
-          command:  if ($status -eq 'NULL' -and $currentpipe -eq 'NULL')
+          command: |
+            if ($status -eq 'NULL' -and $currentpipe -eq 'NULL')
                             {
                              #CANCEL current pipeline
                                    #TRIGGER Pipe 
