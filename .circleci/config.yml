@@ -25,7 +25,7 @@ jobs:
             #echo $status >> ./values.txt
             #echo $currentpipe" >> ./values.txt
             #cat ~/repo/Package/values.txt
-     - run:
+      - run:
           name: env Data
           working_directory: ~/repo/Package
           command: |
