@@ -6,6 +6,7 @@ set -e
 #statuss="BLOK"
 #currentpipes="pip2"
 echo $status
+echo $currentpipes
 
 if [ -z $status ] & [ -z $currentpipe ]
 then
@@ -16,7 +17,7 @@ then
 
 else
     echo "Has value...! $status: $currentpipe"
-        if [ "$status"=="BLOK" ] & [ "$currentpipe"=="pip2" ]
+        if [ "$status"=="BLOK" ] & [ "$currentpipe"=="pip1" ]
     then
             echo "Executing current Pipeline..."
 
