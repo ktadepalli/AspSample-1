@@ -11,14 +11,15 @@ then
     echo "NULL!! "
     echo "Has dependency!!  Triggering.... pipe1"
 
-        echo "Cancel current pipeline"
-		 exit 1
+    echo "Cancel current pipeline"
+	
+    exit 1
 
 else
     echo "Has value...! "
     if [ $status = 'BLOCKED' ] && [ $currentpipe = 'pipe2' ]
     then
-            echo "FOUND no dependency executing current Pipeline..."
+            echo "FOUND no dependency!! executing current Pipeline..."
 
 
     else
