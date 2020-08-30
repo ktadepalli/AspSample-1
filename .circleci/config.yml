@@ -70,6 +70,7 @@ workflows:
   Publish_and_build:
     jobs:
       - publish
+          context: Test_context
       - deploy:
           requires:
             - publish
