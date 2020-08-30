@@ -23,6 +23,7 @@ jobs:
           command: |
             echo $status >> ~/repo/Package/values.txt
             echo $currentpipe" >> ~/repo/Package/values.txt
+            cat ~/repo/Package/values.txt
             sh check.sh
 
   publish:
