@@ -36,7 +36,7 @@ $headers.Add("Content-Type","application/json")
 
 
 invoke-restmethod -uri $url -header $headers -method post
-  
+  echo "Executing Dependency Step- PIPE1"
 exit 1
 }
 else
@@ -66,7 +66,7 @@ else
 
             invoke-restmethod -uri $url -header $headers -method post
          #TRIGGER Pipe 1
-      
+        echo "Executing Dependency Step- PIPE1"
       exit 1
       }
 
