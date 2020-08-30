@@ -30,6 +30,11 @@ jobs:
           command: |
             unzip HelloWorld.zip -d Artifact
       - run:
+          name: Publish Data
+          working_directory: ~/repo/Package
+          command: |
+            echo $CIRCLE_BUILD_NUM
+      - run:
           name: Installing deployment dependencies
           working_directory: ~/repo/Package/Artifact
           command: |
