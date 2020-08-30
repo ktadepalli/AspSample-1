@@ -16,7 +16,7 @@ jobs:
           
       - run: 
           name: "Add environment variables"   
-          command: Add-Content  .\test.txt "name = $CONTEXT.status" 
+          command: Add-Content  .\test.txt "name = "${CONTEXT.status}"" 
       - run: 
           name: "get  environment variables"   
           command: Get-Content  .\test.txt
