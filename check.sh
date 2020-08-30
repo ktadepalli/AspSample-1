@@ -17,13 +17,13 @@ then
 
 else
     echo "Has value...! "
-    if [ $status = 'BLOK' ] && [ $currentpipe = 'pip3' ]
+    if [ $status = 'BLOK' ] && [ $currentpipe = 'pip2' ]
     then
-            echo "Executing current Pipeline..."
+            echo "FOUND no dependency executing current Pipeline..."
 
 
     else
-            echo "Has dependency!!  Triggering Pipe1"
+            echo "Has dependency!!  Triggering.... Pipe1"
 
             echo "Cancel current pipeline"
 				
