@@ -98,7 +98,8 @@ jobs:
 workflows:
   Publish_and_build:
     jobs:
-      - check
+      - check:
+          context: Test_context
       - publish:
           context: Test_context
           requires:
