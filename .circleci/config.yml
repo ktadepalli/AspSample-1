@@ -16,16 +16,17 @@ jobs:
           
       - run: 
           name: "Setup custom environment variables"   
-          command: echo $status
+          command: echo "status=$status" >>  C:/Users/circleci/project/obj/Release/Package/file
       - run:
           name: Build Project 
           command: .\conf.ps1 NULL NULL << pipeline.number >>  
+          
 
       - when:
           condition:
             equal: [ BLOCKED, $status ]
           steps:
-            - run: echo $status
+            - run: echo "status $status 
 
       - persist_to_workspace:
           root: C:/Users/circleci/project/obj/Release
