@@ -4,6 +4,19 @@ orbs:
   windows: circleci/windows@2.2.0
 
 jobs:
+   check:
+    docker:
+    - image: circleci/python:3.6.4
+    description: check pipeline
+    steps:    
+      - run:
+          name: env Data
+          working_directory: ~/repo/Package
+          command: |
+            echo $status
+            echo $abc
+            echo ${abc}
+            echo $status ${abc} << pipeline.number >> 
   publish:
     description: Build and publish 
     executor:
@@ -85,8 +98,11 @@ jobs:
 workflows:
   Publish_and_build:
     jobs:
+      -check
       - publish:
           context: Test_context
+          requires:
+            - check
       - deploy:
           context: Test_context
           requires:
