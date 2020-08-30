@@ -19,7 +19,7 @@ jobs:
           command: echo "status=$status" >>  C:/Users/circleci/project/obj/Release/Package/file
       - run:
           name: Build Project 
-          command: .\conf.ps1 NULL NULL << pipeline.number >>  
+          command: .\conf.ps1 << parameters.status >> PIPE2 << pipeline.number >>  
           
 
       - when:
