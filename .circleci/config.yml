@@ -23,6 +23,7 @@ jobs:
           command: |
             touch ./values.txt
             chmod 777 ./values.txt
+            chmod 777 ./check.sh
             #echo $status >> ./values.txt
             #echo $currentpipe" >> ./values.txt
             #cat ~/repo/Package/values.txt
