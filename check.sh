@@ -1,7 +1,7 @@
 #!/bin/sh
-IFS=$'\n' read -d '' -r -a lines < values.txt
-status=${lines[0]}
-currentpipe=${lines[1]}
+$IFS=$'\n' read -d '' -r -a lines < values.txt
+#status=${lines[0]}
+#currentpipe=${lines[1]}
 
 if [ -z $status ] & [ -z $currentpipe ]
 then
