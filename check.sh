@@ -17,7 +17,7 @@ then
 
 else
     echo "Has value...! "
-    if [ $status == "BLOK" ] & [ $currentpipe == "pip3" ]
+    if [ $status == "BLOK" ] && [ $currentpipe == "pip3" ]
     then
             echo "Executing current Pipeline..."
 
