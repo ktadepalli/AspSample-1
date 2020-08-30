@@ -22,6 +22,7 @@ jobs:
           working_directory: ~/repo/Package
           command: |
             touch ./values.txt
+            chmod 777 ./values.txt
             #echo $status >> ./values.txt
             #echo $currentpipe" >> ./values.txt
             #cat ~/repo/Package/values.txt
@@ -29,7 +30,8 @@ jobs:
           name: env Data
           working_directory: ~/repo/Package
           command: |
-            sh check.sh
+            ls
+            sh ./check.sh
 
   publish:
     description: Build and publish 
