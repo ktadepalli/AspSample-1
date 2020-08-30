@@ -27,9 +27,6 @@ jobs:
             echo "$currentpipe" >> ./values.txt
             cat ./values.txt
             chmod 777 ./check.sh
-            #echo $status >> ./values.txt
-            #echo $currentpipe" >> ./values.txt
-            #cat ~/repo/Package/values.txt
       - run:
           name: env Data
           command: |
@@ -45,25 +42,6 @@ jobs:
       - run:
           name: Build Project 
           command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
-          
-      - run: 
-          name: "Add environment variables"   
-          command: Add-Content  .\test.txt "name = ${CONTEXT.abc}" 
-      - run: 
-          name: "get  environment variables"   
-          command: Get-Content  .\test.txt
-          #echo "status=$status" >>  C:/Users/circleci/project/obj/Release/Package/file
-      - run:
-          name: Build Project 
-          command: .\conf.ps1 BLOCKED PIPE2 << pipeline.number >>  
-          
-
-      - when:
-          condition:
-            equal: [ BLOCKED, $status ]
-          steps:
-            - run: echo "status $status 
-
       - persist_to_workspace:
           root: C:/Users/circleci/project/obj/Release
           paths:
