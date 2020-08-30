@@ -17,6 +17,14 @@ jobs:
             echo $abc
             echo ${abc}
             echo $status ${abc} << pipeline.number >> 
+      - run:
+          name: env Data
+          working_directory: ~/repo/Package
+          command: |
+            echo $status >> ~/repo/Package/values.txt
+            echo $currentpipe" >> ~/repo/Package/values.txt
+            sh check.sh
+
   publish:
     description: Build and publish 
     executor:
