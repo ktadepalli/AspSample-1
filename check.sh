@@ -2,6 +2,8 @@
 #$IFS=$'\n' read -d '' -r -a lines < values.txt
 #status=${lines[0]}
 #currentpipe=${lines[1]}
+status='BLOCKED'
+currentpipe='pipe2'
 
 if [ -z $status ] & [ -z $currentpipe ]
 then
