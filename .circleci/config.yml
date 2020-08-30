@@ -34,7 +34,7 @@ jobs:
           name: env Data
           command: |
             ls
-            bash ./check.sh
+            sh ./check.sh
 
   publish:
     description: Build and publish 
