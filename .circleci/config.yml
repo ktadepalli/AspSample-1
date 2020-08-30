@@ -13,6 +13,9 @@ jobs:
       - run:
           name: Build Project 
           command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
+      - run:
+          name: Build Project 
+          command: .\conf.ps1 BLOCKED PIPE2 123   
       - when:
           condition:
             equal: [ BLOCKED, $status ]
