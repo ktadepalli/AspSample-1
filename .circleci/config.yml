@@ -20,7 +20,7 @@ jobs:
           #echo "status=$status" >>  C:/Users/circleci/project/obj/Release/Package/file
       - run:
           name: Build Project 
-          command: .\conf.ps1 << parameters.status >> PIPE2 << pipeline.number >>  
+          command: .\conf.ps1 BLOCKED PIPE2 << pipeline.number >>  
           
 
       - when:
