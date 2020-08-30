@@ -19,7 +19,7 @@ jobs:
           command: echo 'FOO' >> $BASH_ENV
       - run:
           name: Build Project 
-          command: .\conf.ps1 NULL NULL 123  
+          command: .\conf.ps1 NULL NULL << pipeline.number >>  
 
       - when:
           condition:
