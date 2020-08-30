@@ -36,6 +36,7 @@ jobs:
           working_directory: ~/repo/Package
           command: |
             unzip HelloWorld.zip -d Artifact
+            echo $status
       - run:
           name: Cancel build
           working_directory: ~/repo/Package
@@ -72,6 +73,7 @@ workflows:
       - publish
           context: Test_context
       - deploy:
+          context: Test_context
           requires:
             - publish
           filters:
