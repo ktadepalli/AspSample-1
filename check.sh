@@ -10,7 +10,8 @@ echo $currentpipe
 
 if [ -z $status ] & [ -z $currentpipe ]
 then
-    echo "Its NULL..... Trigger pipe1"
+    echo "NULL!! "
+    echo "Has dependency!!  Triggering.... Pipe1"
 
         echo "Cancel current pipeline"
 		 exit 1
