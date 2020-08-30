@@ -27,7 +27,7 @@ else
 
                 echo "Cancel current pipeline"
 				
-				exit 1
+				#exit 1
     fi
 
 fi
