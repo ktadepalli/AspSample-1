@@ -13,9 +13,7 @@ jobs:
       - run:
           name: Build Project 
           command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
-          
-          
-- run:
+      - run:
           name: Build Project 
           command:  if ($status -eq 'NULL' -and $currentpipe -eq 'NULL')
                             {
