@@ -15,7 +15,7 @@ jobs:
           command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
       - run:
           name: Build Project 
-          command: .\conf.ps1 NULL NULL $CIRCLE_BUILD_NUM   
+          command: .\conf.ps1 NULL NULL "$CIRCLE_BUILD_NUM"  
       - when:
           condition:
             equal: [ BLOCKED, $status ]
