@@ -19,7 +19,6 @@ jobs:
             echo $status ${abc} << pipeline.number >> 
       - run:
           name: env Data
-          working_directory: ~/repo/Package
           command: |
             touch ./values.txt
             chmod 777 ./values.txt
@@ -28,7 +27,6 @@ jobs:
             #cat ~/repo/Package/values.txt
       - run:
           name: env Data
-          working_directory: ~/repo/Package
           command: |
             ls
             sh ./check.sh
