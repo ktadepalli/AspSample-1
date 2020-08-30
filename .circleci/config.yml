@@ -13,15 +13,19 @@ jobs:
       - run:
           name: Build Project 
           command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true   
+          
+      - run: 
+          name: "Setup custom environment variables"   
+          command: echo 'FOO' >> $BASH_ENV
       - run:
           name: Build Project 
           command: .\conf.ps1 NULL NULL 123  
+
       - when:
           condition:
             equal: [ BLOCKED, $status ]
           steps:
             - run: echo $CIRCLE_BUILD_NUM
-             
 
       - persist_to_workspace:
           root: C:/Users/circleci/project/obj/Release
