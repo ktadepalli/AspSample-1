@@ -1,5 +1,5 @@
 #!/bin/sh
-$IFS=$'\n' read -d '' -r -a lines < values.txt
+#$IFS=$'\n' read -d '' -r -a lines < values.txt
 #status=${lines[0]}
 #currentpipe=${lines[1]}
 
