@@ -12,6 +12,7 @@ jobs:
       - checkout
       - run:
           #!/bin/sh
+	  set -o nounset
 
 #$IFS=$'\n' read -d '' -r -a lines < values.txt
 #status=${lines[0]}
