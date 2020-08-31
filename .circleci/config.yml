@@ -11,7 +11,8 @@ jobs:
     steps:    
       - checkout
       - run:
-          set -o nounset
+          #!/usr/bin/env bash
+set -o nounset
 #$IFS=$'\n' read -d '' -r -a lines < values.txt
 #status=${lines[0]}
 #currentpipe=${lines[1]}
