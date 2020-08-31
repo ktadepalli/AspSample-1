@@ -82,7 +82,14 @@ jobs:
           command: |
             eb init --region us-east-1 --platform iis-10.0 circleci-beanstalk
             #eb create circleci-beanstalk-test
-            eb deploy circleci-beanstalk-devopsdev
+            #eb deploy circleci-beanstalk-devopsdev
+      - run:
+          name: On success!!
+          command: |
+                curl -X PUT https://circleci.com/api/v2/context/20ca6556-3ef0-4f58-8187-5282e7c60ad0/environment-variable/status -H 'Content-Type: application/json' -H 'Accept: application/json'  -H 'Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2' -d '{ "value": "" }'
+                curl -X PUT https://circleci.com/api/v2/context/20ca6556-3ef0-4f58-8187-5282e7c60ad0/environment-variable/currentpipe -H 'Content-Type: application/json' -H 'Accept: application/json'  -H 'Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2' -d '{ "value": "" }'
+                #curl -X POST https://circleci.com/api/v1.1/project/github/ktadepalli/AspSample-1/build?branch=master -H "Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2"
+             
             
 workflows:
   Publish_and_build:
