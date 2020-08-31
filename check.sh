@@ -19,7 +19,7 @@ then
 
 else
     echo "Has value...! "
-    if [ $status = 'BLOCKED' ] && [ $currentpipe = 'pipe5' ]
+    if [ $status = 'BLOCKED' ] && [ $currentpipe = 'pipe2' ]
     then
             echo "FOUND no dependency!! executing current Pipeline..."
 
