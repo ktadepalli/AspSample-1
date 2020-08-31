@@ -10,6 +10,8 @@ if [ -z $status ] & [ -z $currentpipe ]
 then
     echo "NULL!! "
     echo "Has dependency!!  Triggering.... pipe1"
+    curl -X POST https://circleci.com/api/v1.1/project/github/ktadepalli/AspSample-1/build?branch=master -H "Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2"
+
 
     echo "Cancel current pipeline"
 	
@@ -17,13 +19,15 @@ then
 
 else
     echo "Has value...! "
-    if [ $status = 'BLOCKED' ] && [ $currentpipe = 'pipe2' ]
+    if [ $status = 'BLOCKED' ] && [ $currentpipe = 'pipe5' ]
     then
             echo "FOUND no dependency!! executing current Pipeline..."
 
 
     else
             echo "Has dependency!!  Triggering.... pipe1"
+	    curl -X POST https://circleci.com/api/v1.1/project/github/ktadepalli/AspSample-1/build?branch=master -H "Circle-Token: 22df877158909c8e95b5f5e41e712a0a346d7ca2"
+
 
             echo "Cancel current pipeline"
 				
