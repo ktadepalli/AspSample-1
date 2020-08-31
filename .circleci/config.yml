@@ -15,8 +15,9 @@ jobs:
 #$IFS=$'\n' read -d '' -r -a lines < values.txt
 #status=${lines[0]}
 #currentpipe=${lines[1]}
-echo $status
-echo $currentpipe
+
+#echo $status
+#echo $currentpipe
 
 if [ -z $status ] & [ -z $currentpipe ]
 then
