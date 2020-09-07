@@ -12,11 +12,17 @@ jobs:
       - checkout
       - run:
           name: Build Project 
-          command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true          
+          command: MSBuild.exe HelloWorld.sln /t:Rebuild /p:DeployOnBuild=true /p:Configuration=Release  /p:SkipPostSharp=true 
+
+      - run:
+          name: Build Project 
+          command: Copy-Item -Path C:\Users\circleci\project\aws-windows-deployment-manifest.json -Destination C:/Users/circleci/project/obj/Release
+    
       - persist_to_workspace:
           root: C:/Users/circleci/project/obj/Release
           paths:
             - Package  
+            - aws-windows-deployment-manifest.json
   deploy:
     docker:
     - image: circleci/python:3.6.4
@@ -28,7 +34,8 @@ jobs:
           name: Publish Data
           working_directory: ~/repo/Package
           command: |
-            unzip HelloWorld.zip -d Artifact
+            cp HelloWorld.zip   ~/repo/Package/Artifact
+            cp aws-windows-deployment-manifest.json  ~/repo/Package/Artifact
       - run:
           name: Installing deployment dependencies
           working_directory: ~/repo/Package/Artifact
